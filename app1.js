@@ -2,7 +2,7 @@
 Task -1: 
 Find the lowest number in the array below.
 */
-const heights = [167, 190, 120, 165, 137];
+const heights = [167, 190, 120, 165, 137, 119,118, 349];
 function lowestNumber(heights){
     let minHeight = heights[0];
     for (const height of heights) {
@@ -20,9 +20,24 @@ document.write('<br> mininum height = ', lowest_height , '<br>');
 /*
  Task -2: 
 Find the friend with the smallest name.
-<br>
-const heights2 = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
+*/
 
+const name_Array = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
+
+// document.write('<br>Smallest Name is : ', smallestName, ' ');
+function smallestName(name_Array){
+    let smallestName = name_Array[0];
+    for (const name of name_Array) {
+        document.write(name, ' ');
+        if( smallestName.length > name.length ){
+            smallestName = name;
+        }
+    }
+    return smallestName;
+}
+let smallName = smallestName(name_Array);
+document.write('<br> The Smallest Name is : ', smallName )
+/*
  Task-3: 
 Your task is to calculate the `total budget` required to buy electronics:
 
