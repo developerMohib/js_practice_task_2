@@ -1,7 +1,6 @@
-/*
-Task -1: 
-Find the lowest number in the array below.
-*/
+/* -------------Find the lowest number in the array below.----------*/
+document.write('--------------------- Task -1 --------------------- <br>');
+
 const heights = [167, 190, 120, 165, 137, 119,118, 349];
 function lowestNumber(heights){
     let minHeight = heights[0];
@@ -17,16 +16,15 @@ function lowestNumber(heights){
 let lowest_height = lowestNumber(heights);
 document.write('<br> mininum height = ', lowest_height , '<br>');
 
-/*
- Task -2: 
-Find the friend with the smallest name.
-*/
+/* -------------Find the friend with the smallest name.---------------*/
+document.write('<br> --------------------- Task -2 --------------------- <br>');
+
 const name_Array = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
 // document.write('<br>Smallest Name is : ', smallestName, ' ');
 function smallestName(name_Array){
     let smallestName = name_Array[0];
     for (const name of name_Array) {
-        document.write(name, ' ');
+        document.write('Person Name : ' ,name, ' <br>');
         if( smallestName.length > name.length ){
             smallestName = name;
         }
@@ -34,30 +32,35 @@ function smallestName(name_Array){
     return smallestName;
 }
 let smallName = smallestName(name_Array);
-document.write('<br> The Smallest Name is : ', smallName ,'<br>');
+document.write('<br> The Smallest Person Name is : ', smallName ,'<br>');
 
-/*
- Task-3: 
-Your task is to calculate the `total budget` required to buy electronics:
 
-        laptop = 35000 tk
-        tablet = 15000 tk
-        mobile = 20000 tk
+document.write('<br> --------------------- Task -3 --------------------- <br>');
 
+/* ----------- Your task is to calculate the `total budget` required to buy electronics:-------
 Write a JavaScript function named `calculateElectronicsBudget` that takes in the number of `laptop, tablets, and mobile` and returns the `total money required`.
-
-function calculateElectronicsBudget(){
-
-}    
-calculateElectronicsBudget();
 */
-
+let products = [
+    {price : 35000},
+    {price : 15000},
+    {price : 20000},
+    {price : 10000},
+    {price : 30000},
+];
+function calculateElectronicsBudget(products){
+    let totalProductPrice = 0;
+    for (const product of products) {
+        totalProductPrice = totalProductPrice + product.price;
+    }
+    // document.write('total Product price ', totalProductPrice);
+    return totalProductPrice;
+}  
+document.write( '<br> total money required ', calculateElectronicsBudget(products) , ' tk <br> ')
 /*
- Task-4: 
-
 You are `given an array of phone objects`, each containing information about the `model, brand, and price`. Your task is to write a JavaScript function named `findAveragePhonePrice` that takes this `array as input` and returns the `average price of phone`.
-
 */
+document.write('<br> --------------------- Task -4 --------------------- <br>');
+
 const phones = [
     {model: "PhoneA", brand: "Iphone", price: 95000 },
 
@@ -75,20 +78,20 @@ const phones = [
 function findAveragePhonePrice(phones){
     let sum = 0;
     for( let i = 0; i < phones.length; i++){
-        document.write(' ', phones[i].price, ' <br>');
+        document.write('Mobile Price : ', phones[i].price, ' <br>');
         sum = sum + phones[i].price;
     }
     let average = sum / phones.length;
     return average;
 }
 let averagePrice = findAveragePhonePrice(phones);
-document.write('Average Price of Moble Phones : ', averagePrice.toFixed(2) , '<br>');
+document.write('<br> Average Price of Moble Phones : ', averagePrice.toFixed(2) , '<br>');
 
 /*
-
- Task -5: (Hard)
 For each employee (their current salary is calculated by multiplying yearly increment with experience) then (adding the result to the starting salary.) Now calculate is the total salary has to be provided by the company in a month.
 */
+document.write('<br> ---------------------Task -5 --------------------- <br>');
+
 const employees = [
     { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
     { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
@@ -102,7 +105,7 @@ function totalSalaryProvided(employees){
     for(let i = 0; i < employees.length; i++){
         // document.write(employees[i].name, ' er increment ',employees[i].experience * employees[i].increment,' <br>');
         let experience = employees[i].experience;
-        
+
         let increment = employees[i].increment;
 
         let starting = employees[i].starting;
